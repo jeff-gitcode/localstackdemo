@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  localstack:
+    container_name: aws-localstack
+    image: localstack/localstack
+    restart: always
+    network_mode: bridge
+    ports:
+      - "127.0.0.1:4510-4530:4510-4530"
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4571:4571"
+    environment:
+      - AWS_DEFAULT_REGION=sa-east-1
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=admin
+      - DEFAULT_REGION=sa-east-1
+      - SERVICES=s3,dynamodb,sqs,apigateway,cloudformation,cloudwatch,ec2,iam,kinesis,kms,lambda,route53,secretsmanager,sns,ssm,stepfuncstions,sts
+      - DEBUG=${DEBUG-}
+      - DATA_DIR=${DATA_DIR-}
+      - LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR-}
+      - HOST_TMP_FOLDER=${TMPDIR:-/tmp/}localstack
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - DISABLE_CORS_CHECKS=1
+    volumes:
+      - "${TMPDIR:-/tmp}/localstack:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
