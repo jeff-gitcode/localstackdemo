@@ -120,3 +120,61 @@ $ terraform apply --auto-approve
 ```
 
 ![terraform-lambda-demo](./doc/terraform-lambda-demo.jpg)
+
+
+## localstack best practice
+
+UI
+
+```dotnetcli
+
+# download windows version
+localstack
+# set env path for localstack.exe
+
+# open docker desktop
+
+# docker compose
+$ docker-compose up
+
+# health check
+$ http://localhost:4566/_localstack/health
+
+# start
+$ localstack start -d
+
+# status
+$ localstack status services
+
+# dashboard
+https://app.localstack.cloud/dashboard
+
+
+# aws sam cli
+$ sam init
+
+$ Compress-Archive index.js function.zip
+
+$ cd ~/.aws
+$ notepad config
+$ notepad credentials
+$ set AWS_PROFILE=localstack
+
+$ aws --endpoint-url=http://localhost:4566 lambda create-function --function-name localstack-lambda-url-example --runtime nodejs18.x --zip-file fileb://function.zip --handler index.handler --role arn:aws:iam::000000000000:role/lambda-role 
+
+$ aws --endpoint-url=http://localhost:4566 lambda create-function-url-config --function-name localstack-lambda-url-example --auth-type NONE
+
+{
+    "FunctionUrl": "http://q2sjdn73gxfjxz86qp3qchq9ljmp04qm.lambda-url.us-east-1.localhost.localstack.cloud:4566/",
+    "FunctionArn": "arn:aws:lambda:us-east-1:000000000000:function:localstack-lambda-url-example",
+    "AuthType": "NONE",
+    "CreationTime": "2024-01-25T12:36:37.977616+0000"
+}
+
+# run in restclient for below curl instead
+
+![alt text](./doc/lambda-demo.gif)
+
+$ curl -X POST "http://q2sjdn73gxfjxz86qp3qchq9ljmp04qm.lambda-url.us-east-1.localhost.localstack.cloud:4566/" -H "Content-Type: application/json" -d '{"num1": "10", "num2": "10"}'
+
+```
