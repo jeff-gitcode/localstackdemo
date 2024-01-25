@@ -126,6 +126,8 @@ $ terraform apply --auto-approve
 
 UI
 
+![alt text](./doc/lambda-demo.gif)
+
 ```dotnetcli
 
 # download windows version
@@ -173,7 +175,6 @@ $ aws --endpoint-url=http://localhost:4566 lambda create-function-url-config --f
 
 # run in restclient for below curl instead
 
-![alt text](./doc/lambda-demo.gif)
 
 $ curl -X POST "http://q2sjdn73gxfjxz86qp3qchq9ljmp04qm.lambda-url.us-east-1.localhost.localstack.cloud:4566/" -H "Content-Type: application/json" -d '{"num1": "10", "num2": "10"}'
 
