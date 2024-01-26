@@ -126,9 +126,21 @@ $ terraform apply --auto-approve
 
 UI
 
+## Tech Stack
+
+- [x] Docker
+- [x] Aws Cli
+- [x] LocalStack
+- [x] Lambda
+- [x] CloudWatch
+![alt text](./doc/cloudwatch.png)
+
 ![alt text](./doc/lambda-demo.gif)
 
 ```dotnetcli
+
+# go to ui/nodejs-aws-lambda path
+cd ./ui/nodejs-aws-lambda
 
 # download windows version
 localstack
@@ -175,7 +187,9 @@ $ aws --endpoint-url=http://localhost:4566 lambda create-function-url-config --f
 
 # run in restclient for below curl instead
 
-
+# change to xxxx.lambda-url base on command runs above
 $ curl -X POST "http://q2sjdn73gxfjxz86qp3qchq9ljmp04qm.lambda-url.us-east-1.localhost.localstack.cloud:4566/" -H "Content-Type: application/json" -d '{"num1": "10", "num2": "10"}'
 
+
+logs describe-log-streams --log-group-name /aws/lambda/serverless-local-hello
 ```

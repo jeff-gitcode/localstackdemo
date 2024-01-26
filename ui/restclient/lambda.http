@@ -1,5 +1,5 @@
 ### test lambda locally
-POST http://q2sjdn73gxfjxz86qp3qchq9ljmp04qm.lambda-url.us-east-1.localhost.localstack.cloud:4566 HTTP/1.1
+POST http://2f6jlllegr3ctfir0y3c4801ubak06du.lambda-url.us-east-1.localhost.localstack.cloud:4566 HTTP/1.1
 Content-Type: application/json
 
 {
