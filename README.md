@@ -265,4 +265,20 @@ $ aws sqs delete-message --queue-url "http://sqs.us-east-1.localhost.localstack.
 
 # delete queue
 $ aws sqs --region us-east-1 delete-queue --queue-url "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-first-queue"
+
+# AspNetCoreWebAPI
+$ dotnet new serverless.AspNetCoreWebAPI -n WarmupAspNetCoreWebAPI
+
+# s3 bucker
+$ aws s3api create-bucket --bucket cloudformation-templates-2022
+{
+    "Location": "/cloudformation-templates-2022"
+}
+
+# check bucketss
+$ aws s3api list-buckets
+
+# deploy
+$ cd WarmupAspNetCoreWebAPI\src\WarmupAspNetCoreWebAPI
+$ dotnet lambda deploy-serverless --stack-name WarmupAspNetCoreWebAPI --s3-bucket cloudformation-templates-2022
 `````

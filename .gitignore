@@ -2,12 +2,15 @@
 **/.terraform
 ui/NetLambdaDemo/src/NetLambdaDemo/bin
 ui/NetLambdaDemo/src/NetLambdaDemo/obj
-
 ui/NetLambdaDemo/test/NetLambdaDemo.Tests/bin
 ui/NetLambdaDemo/test/NetLambdaDemo.Tests/obj
 
 ui/SQSConsumerDemo/src/SQSConsumerDemo/bin
 ui/SQSConsumerDemo/src/SQSConsumerDemo/obj
-
 ui/SQSConsumerDemo/test/SQSConsumerDemo.Tests/bin
 ui/SQSConsumerDemo/test/SQSConsumerDemo.Tests/obj
+
+ui/WarmupAspNetCoreWebAPI/src/WarmupAspNetCoreWebAPI/bin
+ui/WarmupAspNetCoreWebAPI/src/WarmupAspNetCoreWebAPI/obj
+ui/WarmupAspNetCoreWebAPI/test/WarmupAspNetCoreWebAPI.Tests/bin
+ui/WarmupAspNetCoreWebAPI/test/WarmupAspNetCoreWebAPI.Tests/obj
