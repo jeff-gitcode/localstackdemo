@@ -246,12 +246,23 @@ $ aws lambda create-event-source-mapping --function-name SQSConsumerDemo --batch
 }
 
 # send sqs message
-$ aws sqs send-message --queue-url "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-first-queue" --message-body "hello sqs"
-
+$ aws sqs send-message --queue-url "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-first-queue" --message-body "hello from jeff"
+{
+    "MD5OfMessageBody": "e6d49cc3d2f1c3e554e7be2310b67488",
+    "MessageId": "ffe2b32a-fdb4-4c78-997a-19c1785ae8b7    "
+}
 
 # cloud watch logs
 2024-01-27 14:45:06
 [2024/01/27/[$LATEST]cc803c0baf09dacc211bbfccdb379843]
 2024-01-27T03:45:06.207Z 76b4367a-4db3-4c8a-af34-4f1387201919 info Processed message hello sqs
 
+# read message
+$ aws sqs --region us-east-1 receive-message --queue-url "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-first-queue"
+
+# delete message
+$ aws sqs delete-message --queue-url "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-first-queue" --receipt-handle xxxx
+
+# delete queue
+$ aws sqs --region us-east-1 delete-queue --queue-url "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-first-queue"
 `````
