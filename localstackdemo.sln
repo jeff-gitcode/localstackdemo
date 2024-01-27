@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{1C5A235E-FDDF-4B4F-AFF0-1F480C4CED0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetLambdaDemo", "NetLambdaDemo", "{64F8B8A4-1FAB-4541-93B7-E5E8DF87C306}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16136DB0-96B3-4842-92EE-0BA7DB336B55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetLambdaDemo", "ui\NetLambdaDemo\src\NetLambdaDemo\NetLambdaDemo.csproj", "{B277F0BE-655E-4118-8811-C26273133F51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{21469006-56DC-4FB7-97D3-DC5A9721FA19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetLambdaDemo.Tests", "ui\NetLambdaDemo\test\NetLambdaDemo.Tests\NetLambdaDemo.Tests.csproj", "{BF5C650C-6AA0-4184-813E-0E01A5FB0890}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B277F0BE-655E-4118-8811-C26273133F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B277F0BE-655E-4118-8811-C26273133F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B277F0BE-655E-4118-8811-C26273133F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B277F0BE-655E-4118-8811-C26273133F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF5C650C-6AA0-4184-813E-0E01A5FB0890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF5C650C-6AA0-4184-813E-0E01A5FB0890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF5C650C-6AA0-4184-813E-0E01A5FB0890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF5C650C-6AA0-4184-813E-0E01A5FB0890}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64F8B8A4-1FAB-4541-93B7-E5E8DF87C306} = {1C5A235E-FDDF-4B4F-AFF0-1F480C4CED0B}
+		{16136DB0-96B3-4842-92EE-0BA7DB336B55} = {64F8B8A4-1FAB-4541-93B7-E5E8DF87C306}
+		{B277F0BE-655E-4118-8811-C26273133F51} = {16136DB0-96B3-4842-92EE-0BA7DB336B55}
+		{21469006-56DC-4FB7-97D3-DC5A9721FA19} = {64F8B8A4-1FAB-4541-93B7-E5E8DF87C306}
+		{BF5C650C-6AA0-4184-813E-0E01A5FB0890} = {21469006-56DC-4FB7-97D3-DC5A9721FA19}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20B433EC-6B88-4319-8A5B-26A30DCE9FDA}
+	EndGlobalSection
+EndGlobal

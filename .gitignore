@@ -1,2 +1,7 @@
 **/**/cache
 **/.terraform
+ui/NetLambdaDemo/src/NetLambdaDemo/bin
+ui/NetLambdaDemo/src/NetLambdaDemo/obj
+
+ui/NetLambdaDemo/test/NetLambdaDemo.Tests/bin
+ui/NetLambdaDemo/test/NetLambdaDemo.Tests/obj

@@ -137,7 +137,7 @@ UI
 
 ![alt text](./doc/lambda-demo.gif)
 
-```dotnetcli
+`````javascript
 
 # go to ui/nodejs-aws-lambda path
 cd ./ui/nodejs-aws-lambda
@@ -172,7 +172,13 @@ $ Compress-Archive index.js function.zip
 $ cd ~/.aws
 $ notepad config
 $ notepad credentials
+
+
+
 $ set AWS_PROFILE=localstack
+
+# list all the configurations 
+$ aws configure list
 
 $ aws --endpoint-url=http://localhost:4566 lambda create-function --function-name localstack-lambda-url-example --runtime nodejs18.x --zip-file fileb://function.zip --handler index.handler --role arn:aws:iam::000000000000:role/lambda-role 
 
@@ -192,4 +198,24 @@ $ curl -X POST "http://q2sjdn73gxfjxz86qp3qchq9ljmp04qm.lambda-url.us-east-1.loc
 
 
 logs describe-log-streams --log-group-name /aws/lambda/serverless-local-hello
-```
+
+
+# .net lambda function
+// install AWS CLI
+$ dotnet tool install -g Amazon.Lambda.Tools
+
+// install the Lambda Template
+$ dotnet new --install Amazon.Lambda.Templates
+
+// create a empty function
+$ dotnet new lambda.EmptyFunction --name NetLambdaDemo
+
+# deploy
+$ cd "NetLambdaDemo/src/NetLambdaDemo"
+$ dotnet lambda deploy-function
+
+# invoke
+$ dotnet lambda invoke-function NetLambdaDemo --payload "Invoking the function"
+
+
+`````
