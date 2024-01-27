@@ -5,3 +5,9 @@ ui/NetLambdaDemo/src/NetLambdaDemo/obj
 
 ui/NetLambdaDemo/test/NetLambdaDemo.Tests/bin
 ui/NetLambdaDemo/test/NetLambdaDemo.Tests/obj
+
+ui/SQSConsumerDemo/src/SQSConsumerDemo/bin
+ui/SQSConsumerDemo/src/SQSConsumerDemo/obj
+
+ui/SQSConsumerDemo/test/SQSConsumerDemo.Tests/bin
+ui/SQSConsumerDemo/test/SQSConsumerDemo.Tests/obj

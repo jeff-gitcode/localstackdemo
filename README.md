@@ -134,6 +134,8 @@ UI
 - [x] Lambda
 - [x] CloudWatch
 ![alt text](./doc/cloudwatch.png)
+- [x] SQS
+![alt text](./doc/sqs-demo.gif)
 
 ![alt text](./doc/lambda-demo.gif)
 
@@ -217,5 +219,39 @@ $ dotnet lambda deploy-function
 # invoke
 $ dotnet lambda invoke-function NetLambdaDemo --payload "Invoking the function"
 
+# create sqs
+$ aws sqs create-queue --queue-name my-first-queue 
+{
+    "QueueUrl": "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-first-queue"
+}
+
+# create function to read sqs
+$ dotnet new lambda.SQS -n SQSConsumerDemo
+
+# deploy
+$ cd "SQSConsumerDemo/src/SQSConsumerDemo"
+$ dotnet lambda deploy-function
+
+$ aws lambda create-event-source-mapping --function-name SQSConsumerDemo --batch-size 10  --maximum-batching-window-in-seconds 5 --event-source-arn arn:aws:sqs:us-east-1:000000000000:my-first-queue
+{
+    "UUID": "911e845c-520c-4751-961a-d441af7889ef",
+    "BatchSize": 10,
+    "MaximumBatchingWindowInSeconds": 5,
+    "EventSourceArn": "arn:aws:sqs:us-east-1:000000000000:my-first-queue",
+    "FunctionArn": "arn:aws:lambda:us-east-1:000000000000:function:SQSConsumerDemo",
+    "LastModified": "2024-01-27T14:34:02.784397+11:00",
+    "State": "Creating",
+    "StateTransitionReason": "USER_INITIATED",
+    "FunctionResponseTypes": []
+}
+
+# send sqs message
+$ aws sqs send-message --queue-url "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-first-queue" --message-body "hello sqs"
+
+
+# cloud watch logs
+2024-01-27 14:45:06
+[2024/01/27/[$LATEST]cc803c0baf09dacc211bbfccdb379843]
+2024-01-27T03:45:06.207Z 76b4367a-4db3-4c8a-af34-4f1387201919 info Processed message hello sqs
 
 `````
