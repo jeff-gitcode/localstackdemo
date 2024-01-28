@@ -176,7 +176,7 @@ $ notepad config
 $ notepad credentials
 
 
-
+# set aws profile
 $ set AWS_PROFILE=localstack
 
 # list all the configurations 
@@ -280,5 +280,7 @@ $ aws s3api list-buckets
 
 # deploy
 $ cd WarmupAspNetCoreWebAPI\src\WarmupAspNetCoreWebAPI
-$ dotnet lambda deploy-serverless --stack-name WarmupAspNetCoreWebAPI --s3-bucket cloudformation-templates-2022
+$ dotnet lambda deploy-serverless --stackname WarmupAspNetCoreWebAPI --s3-bucket cloudformation-templates-2022
+
+$ dotnet lambda deploy-serverless --stackname WarmupAspNetCoreWebAPI --profile localstack --region us-east-1 --s3-bucket cloudformation-templates-2022
 `````
